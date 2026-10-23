@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte um CEP e encontre o endereço de forma rápida e simples.">
+  <title>BuscaCEP — Consulta de endereço</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="BuscaCEP início">
+        <span class="brand-mark" aria-hidden="true">⌖</span>
+        <span>Busca<span class="brand-highlight">CEP</span></span>
+      </a>
+      <span class="topbar-note">Consulta de endereço</span>
+    </header>
+
+    <section class="content" aria-labelledby="page-title">
+      <div class="intro">
+        <span class="eyebrow"><span class="status-dot"></span> SIMPLES E RÁPIDO</span>
+        <h1 id="page-title">Encontre um endereço <span>pelo CEP.</span></h1>
+        <p>Digite os oito números do CEP para consultar o logradouro, bairro, cidade e estado.</p>
+        <div class="tip"><span class="tip-icon" aria-hidden="true">i</span><span>Não sabe o CEP completo? Confira se digitou todos os números antes de buscar.</span></div>
+      </div>
+
+      <section class="search-card" aria-label="Consulta de CEP">
+        <div class="card-heading">
+          <div>
+            <span class="section-label">CONSULTA</span>
+            <h2>Buscar endereço</h2>
+          </div>
+          <span class="card-icon" aria-hidden="true">⌕</span>
+        </div>
+
+        <form id="cep-form" novalidate>
+          <label for="cep">CEP</label>
+          <div class="search-row">
+            <input type="text" id="cep" name="cep" placeholder="00000-000" inputmode="numeric" autocomplete="postal-code" maxlength="9" aria-describedby="cep-help">
+            <button type="submit" id="buscar-btn"><span>Buscar</span><span aria-hidden="true">→</span></button>
+          </div>
+          <small id="cep-help">Digite apenas os números ou use o formato 00000-000.</small>
+        </form>
+
+        <div id="resultado" class="message" role="status" aria-live="polite"></div>
+
+        <div class="results-heading">
+          <h3>Endereço encontrado</h3>
+          <span class="results-line"></span>
+        </div>
+        <div class="fields-grid">
+          <div class="field field-wide">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" placeholder="Rua, avenida..." readonly>
+          </div>
+          <div class="field field-wide">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" placeholder="Bairro" readonly>
+          </div>
+          <div class="field">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" placeholder="Cidade" readonly>
+          </div>
+          <div class="field field-state">
+            <label for="estado">UF</label>
+            <input type="text" id="estado" placeholder="SP" readonly>
+          </div>
+        </div>
+        <p class="powered-by">Dados consultados pela API ViaCEP.</p>
+      </section>
+    </section>
+    <footer class="footer"><span>BuscaCEP</span><span>Uma consulta simples, sem complicação.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
